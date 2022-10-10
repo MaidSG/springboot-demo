@@ -1,6 +1,7 @@
 package com.wy.springbootdemo.core;
 
 
+import com.wy.springbootdemo.exception.BaseException;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -33,6 +34,11 @@ public class ErrorResponse {
         this.errorTypeName = errorTypeName;
         this.message = message;
     }
+
+    public ErrorResponse(BaseException ex, String path) {
+        this(ex.getErrorConstant().getCode(), ex.getErrorConstant().getStatus().value(), ex.getErrorConstant().getMessage(), path, ex.getData());
+    }
+
 
     public ErrorResponse(int code, int status,  String message, String errorTypeName, HashMap<String, Object> data) {
         this.code = code;

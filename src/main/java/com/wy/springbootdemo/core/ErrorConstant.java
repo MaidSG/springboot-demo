@@ -10,8 +10,9 @@ import org.springframework.http.HttpStatus;
 @Getter
 @ToString
 public enum ErrorConstant {
-    ERROR_CONSTANT(0000,HttpStatus.BAD_REQUEST,"未找到资源");
-
+    ERROR_CONSTANT(0,HttpStatus.BAD_REQUEST,"未找到资源"),
+    ERROR_BITMAP_Execption(909,HttpStatus.BAD_REQUEST,"位图参数错误")
+    ;
     private final int code;
 
     private final HttpStatus status;
