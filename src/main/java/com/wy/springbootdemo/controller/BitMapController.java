@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api")
@@ -37,7 +35,7 @@ public class BitMapController {
     }
 
     @GetMapping("/bit-num/{num}")
-    public ResponseEntity contains(@RequestParam("num") int num) {
+    public ResponseEntity contains(@PathVariable("num") int num) {
         boolean contains = bitMap.contains(num);
         return ResponseEntity.ok("the " + num + "contains: " + contains);
     }
