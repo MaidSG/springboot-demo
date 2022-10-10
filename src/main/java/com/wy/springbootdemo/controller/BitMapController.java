@@ -31,13 +31,13 @@ public class BitMapController {
     @DeleteMapping("/bit-num/{num}")
     public ResponseEntity<String> delete(@PathVariable("num") int num) {
         bitMap.delete(num);
-        return ResponseEntity.ok(num + "delete complete");
+        return ResponseEntity.ok(num + " delete complete");
     }
 
     @GetMapping("/bit-num/{num}")
     public ResponseEntity contains(@PathVariable("num") int num) {
         boolean contains = bitMap.contains(num);
-        return ResponseEntity.ok("the " + num + "contains: " + contains);
+        return ResponseEntity.ok("the " + num + " contains: " + contains);
     }
 
 

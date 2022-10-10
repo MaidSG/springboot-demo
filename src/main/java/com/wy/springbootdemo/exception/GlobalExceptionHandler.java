@@ -1,6 +1,6 @@
 package com.wy.springbootdemo.exception;
 
-import com.wy.springbootdemo.entity.ErrorResponse;
+import com.wy.springbootdemo.core.ErrorResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
