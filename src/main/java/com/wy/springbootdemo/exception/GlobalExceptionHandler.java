@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 @ControllerAdvice
 @ResponseBody
 public class GlobalExceptionHandler {
-        ErrorResponse bitmapResponse =  new ErrorResponse(new BitMapException(null),"");
+        ErrorResponse bitmapResponse =  new ErrorResponse(new BitMapException(null),"BitMapException");
 
 
         //指定拦截

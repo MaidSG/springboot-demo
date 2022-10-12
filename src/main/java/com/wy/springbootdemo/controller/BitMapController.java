@@ -20,7 +20,7 @@ public class BitMapController {
         System.out.println(unit);
         String str_num = unit.getId();
         if (str_num == null || "".equals(str_num)){
-            throw new BitMapException();
+            throw new BitMapException(null);
         }
         int number = Integer.parseInt(str_num);
         bitMap.add(number);

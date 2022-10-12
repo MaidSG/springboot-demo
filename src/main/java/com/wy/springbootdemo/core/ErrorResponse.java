@@ -35,8 +35,8 @@ public class ErrorResponse {
         this.message = message;
     }
 
-    public ErrorResponse(BaseException ex, String path) {
-        this(ex.getErrorConstant().getCode(), ex.getErrorConstant().getStatus().value(), ex.getErrorConstant().getMessage(), path, ex.getData());
+    public ErrorResponse(BaseException ex, String errorTypeName) {
+        this(ex.getErrorConstant().getCode(), ex.getErrorConstant().getStatus().value(), ex.getErrorConstant().getMessage(), errorTypeName, ex.getData());
     }
 
 
