@@ -1,23 +1,15 @@
 package com.wy.springbootdemo.exception;
 
-public class BitMapException extends RuntimeException{
-    private String message;
+import com.wy.springbootdemo.core.ErrorConstant;
 
-    public BitMapException(){
-        super();
+import java.util.Map;
+
+public class BitMapException extends BaseException{
+
+
+    public BitMapException(Map<String,Object> data){
+        super(ErrorConstant.ERROR_CONSTANT,data);
     }
 
-    public BitMapException(String message){
-        super(message);
-        this.message = message;
-    }
 
-    @Override
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
 }

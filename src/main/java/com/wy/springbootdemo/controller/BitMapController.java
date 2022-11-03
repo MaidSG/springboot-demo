@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api")
@@ -22,7 +20,7 @@ public class BitMapController {
         System.out.println(unit);
         String str_num = unit.getId();
         if (str_num == null || "".equals(str_num)){
-            throw new BitMapException();
+            throw new BitMapException(null);
         }
         int number = Integer.parseInt(str_num);
         bitMap.add(number);
@@ -33,13 +31,13 @@ public class BitMapController {
     @DeleteMapping("/bit-num/{num}")
     public ResponseEntity<String> delete(@PathVariable("num") int num) {
         bitMap.delete(num);
-        return ResponseEntity.ok(num + "delete complete");
+        return ResponseEntity.ok(num + " delete complete");
     }
 
     @GetMapping("/bit-num/{num}")
-    public ResponseEntity contains(@RequestParam("num") int num) {
+    public ResponseEntity contains(@PathVariable("num") int num) {
         boolean contains = bitMap.contains(num);
-        return ResponseEntity.ok("the " + num + "contains: " + contains);
+        return ResponseEntity.ok("the " + num + " contains: " + contains);
     }
 
 
